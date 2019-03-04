@@ -50,10 +50,33 @@ export default [
       }
     ]
   },
-  // 消息中心
+  // 工作台
+/*  {
+    path: '/home_platform',
+    name: 'home_platform',
+    meta: {
+      icon: 'logo-buffer',
+      title: '工作台'
+    },
+    component: Main,
+    children: [
+      {
+        path: '/home_platform_inner',
+        name: 'home_platform_inner',
+        meta: {
+          hideInMenu: true,
+          title: '工作台',
+          notCache: true,
+          icon: 'md-home'
+        },
+        component: () => import('@/view/single-page/home')
+      }
+    ]
+  },*/
+  // 修改密码
   {
-    path: '/message',
-    name: 'message',
+    path: '/change_password',
+    name: 'change_password',
     component: Main,
     meta: {
       hideInBread: true,
@@ -61,64 +84,181 @@ export default [
     },
     children: [
       {
-        path: 'message_page',
-        name: 'message_page',
+        path: '/change_password_inner',
+        name: 'change_password_inner',
         meta: {
-          icon: 'md-notifications',
-          title: '消息中心'
+         icon: 'ios-key-outline',
+         title: '修改密码'
         },
-        component: () => import('@/view/single-page/message/index.vue')
+        component: () => import('@/view/i18n/i18n-page.vue')
       }
     ]
   },
-  // 样式组件
+  // 导航管理
   {
-    path: '/components',
-    name: 'components',
+    path: '/navigator_manage',
+    name: 'navigator_manage',
     meta: {
       icon: 'logo-buffer',
-      title: '组件'
+      title: '导航管理'
     },
     component: Main,
     children: [
       {
-        path: 'cropper_page',
-        name: 'cropper_page',
+        path: '/navigator_manage_inner',
+        name: 'navigator_manage_inner',
         meta: {
-          icon: 'md-crop',
-          title: '图片裁剪'
+          icon: 'md-navigate',
+          title: '导航管理'
         },
-        component: () => import('@/view/components/cropper/cropper.vue')
+        component: () => import('@/view/i18n/i18n-page.vue')
       }
     ]
   },
-  // 上传相关
+  // 内容管理
   {
-    path: '/update',
-    name: 'update',
+    path: '/content_manage',
+    name: 'content_manage',
     meta: {
-      icon: 'md-cloud-upload',
-      title: '数据上传'
+      icon: 'ios-paper-outline',
+      title: '内容管理'
     },
     component: Main,
     children: [
       {
-        path: 'update_table_page',
-        name: 'update_table_page',
+        path: '/content_manage_information',
+        name: 'content_manage_information',
         meta: {
           icon: 'ios-document',
-          title: '上传Csv'
+          title: '资讯'
         },
-        component: () => import('@/view/update/update-table.vue')
+        component: () => import('@/view/i18n/i18n-page.vue')
       },
       {
-        path: 'update_paste_page',
-        name: 'update_paste_page',
+        path: '/content_manage_downlaod',
+        name: 'content_manage_downlaod',
         meta: {
-          icon: 'md-clipboard',
-          title: '粘贴表格数据'
+          icon: 'ios-cloud-download',
+          title: '下载'
         },
-        component: () => import('@/view/update/update-paste.vue')
+        component: () => import('@/view/i18n/i18n-page.vue')
+      }
+    ]
+  },
+  // 会员管理
+  {
+    path: '/member_manage',
+    name: 'member_manage',
+    meta: {
+      icon: 'ios-people',
+      title: '会员管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: '/member_manage_register',
+        name: 'member_manage_register',
+        meta: {
+          icon: 'md-person',
+          title: '注册会员'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+      {
+        path: '/member_manage_meeting',
+        name: 'member_manage_meeting',
+        meta: {
+          icon: 'md-person-add',
+          title: '报名大会人员'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+      {
+        path: '/member_manage_group',
+        name: 'member_manage_group',
+        meta: {
+          icon: 'md-people',
+          title: '会员组管理'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+      {
+        path: '/member_manage_level_words',
+        name: 'member_manage_level_words',
+        meta: {
+          icon: 'md-create',
+          title: '会员留言'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+    ]
+  },
+  // 站点设置
+  {
+    path: '/site_manage',
+    name: 'site_manage',
+    meta: {
+      icon: 'md-globe',
+      title: '站点设置'
+    },
+    component: Main,
+    children: [
+      {
+        path: '/site_manage_role',
+        name: 'site_manage_role',
+        meta: {
+          icon: 'ios-person',
+          title: '管理角色'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+      {
+        path: '/site_manage_manage',
+        name: 'site_manage_manage',
+        meta: {
+          icon: 'ios-person',
+          title: '管理员管理'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+      {
+        path: '/site_manage_website_information',
+        name: 'site_manage_website_information',
+        meta: {
+          icon: 'ios-document',
+          title: '网站信息管理'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+      {
+        path: '/site_manage_frendship_link',
+        name: 'site_manage_frendship_link',
+        meta: {
+          icon: 'ios-link',
+          title: '友情链接管理'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
+      },
+    ]
+  },
+  // 统计（待定）
+  {
+    path: '/statistics',
+    name: 'statistics',
+    meta: {
+      icon: 'ios-stats',
+      title: '统计（待定）'
+    },
+    component: Main,
+    children: [
+      {
+        path: '/statistics_inner',
+        name: 'statistics_inner',
+        meta: {
+          icon: 'ios-stats',
+          title: '统计（待定）'
+        },
+        component: () => import('@/view/i18n/i18n-page.vue')
       }
     ]
   },
@@ -130,7 +270,7 @@ export default [
       icon: 'md-planet',
       hideInBread: true,
       // 演示权限-['admin','super_admin',]
-      access:['super_admin']
+      // access:['super_admin']
       // access:['admin','super_admin',]
     },
     component: Main,
